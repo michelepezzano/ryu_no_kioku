@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>竜の記憶 — Ryū no Kioku</title>
+  <meta name="description" content="Un ricordo che prende vita.">
+
+  <!-- Font: titoli in Cormorant Garamond, testo in Inter, giapponese in Noto Serif JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- PETALI DI CILIEGIO -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- INTRO — IL RISVEGLIO DEL DRAGO -->
+  <section id="intro" aria-label="Introduzione">
+    <div class="washi-texture" aria-hidden="true"></div>
+    <div class="dragon-stage">
+      <div class="ink-bloom" aria-hidden="true"></div>
+      <img class="dragon-illustration" src="assets/dragon.jpg" alt="Illustrazione di un drago in stile giapponese"
+        onerror="this.classList.add('img-missing')">
+      <div class="dragon-placeholder" aria-hidden="true">
+        <span class="placeholder-kanji">龍</span>
+      </div>
+    </div>
+    <div class="intro-text">
+      <p class="intro-line line-1">Ogni drago custodisce un tesoro.</p>
+      <p class="intro-line line-2">Il mio è un ricordo.</p>
+    </div>
+    <button id="enter-btn" class="enter-btn" type="button">
+      <span>Entra</span>
+    </button>
+  </section>
+
+  <!-- SITO PRINCIPALE -->
+  <main id="site" hidden>
+
+    <!-- SEZIONE 1 — RINGRAZIAMENTO -->
+    <section class="section section-thanks" id="sezione-1">
+      <div class="reveal">
+        <span class="eyebrow">記憶 &nbsp;·&nbsp; kioku</span>
+        <!-- ID AGGIUNTO: dynamic-title -->
+        <h1 class="section-title" id="dynamic-title">Grazie di essere qui.</h1>
+        <!-- ID AGGIUNTO: dynamic-text -->
+        <p class="section-text" id="dynamic-text">
+          Questo giorno non sarebbe stato lo stesso senza
+          di te: la tua presenza, vicina o lontana, ha reso il traguardo
+          qualcosa da condividere, non solo da raggiungere. Grazie di cuore
+          per essere parte di questa storia.
+        </p>
+      </div>
+      <figure class="reveal photo-hero">
+        <!-- ID AGGIUNTO: dynamic-hero -->
+        <img id="dynamic-hero" src="assets/Japan.jpg.webp" alt="Fotografia del giorno della laurea"
+          loading="lazy">
+      </figure>
+    </section>
+
+    <!-- DIVISORE -->
+    <div class="sakura-divider" aria-hidden="true">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <g fill="currentColor">
+          <g>
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(72 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(144 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(216 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(288 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+        </g>
+        <circle cx="20" cy="20" r="2.2" fill="currentColor" />
+      </svg>
+    </div>
+
+    <!-- SEZIONE 2 — GALLERIA -->
+    <section class="section section-gallery" id="sezione-2">
+      <div class="reveal">
+        <span class="eyebrow">思い出 &nbsp;·&nbsp; omoide</span>
+        <!-- ID AGGIUNTO: dynamic-gallery-title -->
+        <h2 class="section-title" id="dynamic-gallery-title">Momenti insieme</h2>
+        <p class="section-text">
+          
+        </p>
+      </div>
+      <div class="gallery-track reveal" tabindex="0" aria-label="Galleria fotografica">
+        <!-- ID AGGIUNTI alle foto della galleria: dyn-gal-0, dyn-gal-1, ecc. -->
+        <div class="gallery-item"><img id="dyn-gal-0" src="assets/momento-1.jpg" alt="Momento 1" loading="lazy"></div>
+        <div class="gallery-item"><img id="dyn-gal-1" src="assets/momento-2.jpg" alt="Momento 2" loading="lazy"></div>
+        <div class="gallery-item"><img id="dyn-gal-2" src="assets/momento-3.jpg" alt="Momento 3" loading="lazy"></div>
+        <div class="gallery-item"><img id="dyn-gal-3" src="assets/momento-4.jpg" alt="Momento 4" loading="lazy"></div>
+        <div class="gallery-item"><img id="dyn-gal-4" src="assets/momento-5.jpg" alt="Momento 5" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- DIVISORE -->
+    <div class="sakura-divider" aria-hidden="true">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <g fill="currentColor">
+          <g>
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(72 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(144 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(216 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(288 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+        </g>
+        <circle cx="20" cy="20" r="2.2" fill="currentColor" />
+      </svg>
+    </div>
+
+    <!-- SEZIONE 3 — COLONNA SONORA -->
+    <section class="section section-music" id="sezione-3">
+      <div class="reveal music-panel">
+        <span class="eyebrow">音楽 &nbsp;·&nbsp; ongaku</span>
+        <h2 class="section-title">La tua colonna sonora</h2>
+        <p class="section-text">Musica da portare sempre con te.</p>
+
+        <div class="spotify-frame">
+          <!-- ID AGGIUNTO: dynamic-spotify -->
+          <iframe id="dynamic-spotify" title="Playlist Spotify" style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0"
+            width="100%" height="152" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+          </iframe>
+        </div>
+        <!-- ID AGGIUNTO: dynamic-spotify-btn -->
+        <a class="ghost-btn" id="dynamic-spotify-btn" href="https://open.spotify.com" target="_blank" rel="noopener">
+          <span>Ascolta su Spotify</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- DIVISORE -->
+    <div class="sakura-divider" aria-hidden="true">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <g fill="currentColor">
+          <g>
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(72 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(144 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(216 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+          <g transform="rotate(288 20 20)">
+            <path d="M20,20 C17,15 15,8 18,4 C19,6 19.5,6.5 20,7.5 C20.5,6.5 21,6 22,4 C25,8 23,15 20,20 Z" />
+          </g>
+        </g>
+        <circle cx="20" cy="20" r="2.2" fill="currentColor" />
+      </svg>
+    </div>
+
+    <!-- SEZIONE 4 — LASCIA UN PENSIERO -->
+    <section class="section section-note" id="sezione-4">
+      <div class="reveal">
+        <span class="eyebrow">言葉 &nbsp;·&nbsp; kotoba</span>
+        <h2 class="section-title">Lascia un pensiero</h2>
+        <p class="section-text">Poche parole, per lasciare un segno in questa giornata.</p>
+      </div>
+
+      <form class="note-card reveal" id="note-form" autocomplete="off">
+        <svg class="daruma" viewBox="0 0 40 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 4 C31 4 36 16 34 28 C32 40 8 40 6 28 C4 16 9 4 20 4 Z" fill="#9B1B30" />
+          <ellipse cx="20" cy="20" rx="11" ry="10" fill="#F8F5EF" />
+          <path d="M11 16 C13 13 17 13 19 15" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" />
+          <path d="M21 15 C23 13 27 13 29 16" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" />
+          <path d="M12 25 C15 22 18 24 20 22 C22 24 25 22 28 25" fill="none" stroke="#222222" stroke-width="1.8"
+            stroke-linecap="round" />
+          <path d="M17 34 L23 34" stroke="#C9A96E" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+        <div class="field">
+          <input type="text" id="note-name" name="name" placeholder=" " required>
+          <label for="note-name">Nome</label>
+        </div>
+        <div class="field field-textarea">
+          <textarea id="note-message" name="message" placeholder=" " rows="4" required></textarea>
+          <label for="note-message">Messaggio</label>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span>Invia il pensiero</span>
+        </button>
+        <p class="note-confirmation" id="note-confirmation" aria-live="polite">
+          Grazie. Il tuo pensiero è stato custodito.
+        </p>
+      </form>
+      <iframe name="hidden-form-target" id="hidden-form-target" class="hidden-iframe" title="invio silenzioso"
+        aria-hidden="true"></iframe>
+    </section>
+
+    <!-- SEZIONE FINALE -->
+    <section class="section section-final" id="sezione-finale">
+      <div class="seigaiha-bg" aria-hidden="true"></div>
+      <div class="dragon-stage dragon-stage-final">
+       <img class="dragon-illustration" src="assets/dragon.webp" alt="Il drago, immobile" onerror="this.classList.add('img-missing')">
+        <div class="dragon-placeholder" aria-hidden="true">
+          <span class="placeholder-kanji">龍</span>
+        </div>
+      </div>
+      <div class="final-text reveal">
+        <p>I draghi custodiscono ciò che ritengono più prezioso.</p>
+        <p>Grazie per aver condiviso questa giornata con me.</p>
+        <!-- ID AGGIUNTI per possibile personalizzazione -->
+        <p class="final-thanks" id="dynamic-final-thanks">Grazie di cuore.</p>
+        <p class="signature" id="dynamic-signature">Michele Pezzano</p>
+        <span class="hanko" aria-hidden="true">感謝</span>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
